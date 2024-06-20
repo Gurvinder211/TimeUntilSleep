@@ -2,11 +2,17 @@ function timeUntilSleep() {
 
     let sleepHour = parseInt(document.getElementById('sleepHour').value);
     let sleepMinute = parseInt(document.getElementById('sleepMinute').value);
+
+    // Getting user's time zone
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     // Get the current date and time
     const now = new Date();
+
+    //converting to users local time zone
+    const localDate = new Date(now.toLocaleString('en-US', { timeZone: userTimeZone }));
     
     // Create a new Date object for today's sleep time
-    const sleepTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), sleepHour, sleepMinute, 0);
+    const sleepTime = new Date(localDate.getFullYear(), localDate.getMonth(), localDate.getDate(), sleepHour, sleepMinute, 0);
   
     // Check if current time is past the sleep time
     if (now > sleepTime) {
