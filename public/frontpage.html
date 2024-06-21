@@ -9,16 +9,16 @@
 <body>
     <script src="main.js"></script>
     <p>This tool helps you become more aware of your available time for work until going to sleep.</p>
-    <form onsubmit="event.preventDefault(); timeUntilSleep()">
+    <form onsubmit="timeUntilSleep(); event.preventDefault()">
         <label for="sleepHour">When will you sleep today? (24-hour format)<br> Hour:</label>
         <input type="number" id="sleepHour" min="0" max="23" required>
         
         <label for="sleepMinute">Minute:</label>
         <input type="number" id="sleepMinute" min="0" max="59" value="0" required>
         
-        <button type="submit">Calculate</button>
+        <button type="submit" value="submit">Calculate</button>
       </form>
       <p id="result"></p>
-     
+      
 </body>
 </html>

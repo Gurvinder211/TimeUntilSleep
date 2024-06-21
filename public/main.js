@@ -32,4 +32,5 @@ function timeUntilSleep() {
     let result = `${hours} hours, ${minutes} minutes, and ${seconds} seconds left until sleep.`
     document.getElementById('result').textContent =  result;
     setInterval(timeUntilSleep, 1000);
+
   }

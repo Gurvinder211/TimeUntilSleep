@@ -9,10 +9,11 @@ app.get('/', (req, res) => {
     res.redirect('/frontpage.html')
 })
 
+
+
 app.get('*', function(req, res){
     res.send('404 page not found', 404);
 });
-
 
 
 app.listen(port, () => {
